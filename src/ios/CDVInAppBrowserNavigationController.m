@@ -32,7 +32,21 @@
 - (void) viewDidLoad {
 
     CGRect statusBarFrame = [self invertFrameIfNeeded:[UIApplication sharedApplication].statusBarFrame];
-    statusBarFrame.size.height = STATUSBAR_HEIGHT;
+    
+    //simplified from https://github.com/apache/cordova-plugin-inappbrowser/issues/301#issuecomment-452220131
+    
+      //and https://stackoverflow.com/questions/46192280/detect-if-the-device-is-iphone-x
+    
+      bool hasTopNotch = NO;
+      if (@available(iOS 11.0, *)) {
+          hasTopNotch = [[[UIApplication sharedApplication] delegate] window].safeAreaInsets.top > 20.0;
+      }
+      if(hasTopNotch){
+          statusBarFrame.size.height = [UIApplication sharedApplication].statusBarFrame.size.height;
+      } else {
+          statusBarFrame.size.height = STATUSBAR_HEIGHT;
+      }
+    
     // simplified from: http://stackoverflow.com/a/25669695/219684
 
     UIToolbar* bgToolbar = [[UIToolbar alloc] initWithFrame:statusBarFrame];
