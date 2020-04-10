@@ -162,7 +162,7 @@ instance, or the system browser.
     - __hardwareback__: works the same way as on Android platform.
     - __fullscreen__: set to `yes` to create the browser control without a border around it. Please note that if __location=no__ is also specified, there will be no control presented to user to close IAB window.
 
-    - __headers__: Headers for the http request. Optional. _(String)_ or _(javascript object)_
+- __headers__: Headers for the http request. Optional. _(String)_ or _(javascript object)_
     - _(String)_: headers must be in `header=value` form, separated by commas : `header1=value1,header2=value2`. don't use _(String)_ if commas or equals can be contained in headers or values.
     - _(javascript object)_: headers are stored in object's properties like this `{ 'header1': 'value1', 'header2': 'value2'}`. this storage always works even if headers contain commas or equals.
     
