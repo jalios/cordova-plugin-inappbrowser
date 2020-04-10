@@ -16,8 +16,10 @@ interface Window {
      * @param  options Options for the InAppBrowser. Optional, defaulting to: location=yes.
      *                 The options string must not contain any blank space, and each feature's
      *                 name/value pairs must be separated by a comma. Feature names are case insensitive.
+     * @param  headers Request headers (Optional). 
+     *
      */
-    open(url: string, target?: string, options?: string): InAppBrowser;
+    open(url: string, target?: string, options?: string, headers?: any): InAppBrowser;
 }
 
 /**
