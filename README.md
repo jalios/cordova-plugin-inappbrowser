@@ -80,7 +80,7 @@ simply hook `window.open` during initialization.  For example:
 Opens a URL in a new `InAppBrowser` instance, the current browser
 instance, or the system browser.
 
-    var ref = cordova.InAppBrowser.open(url, target, options);
+    var ref = cordova.InAppBrowser.open(url, target, options, headers);
 
 - __ref__: Reference to the `InAppBrowser` window when the target is set to `'_blank'`. _(InAppBrowser)_
 
@@ -149,6 +149,9 @@ instance, or the system browser.
     - __toolbarposition__: Set to `top` or `bottom` (default is `bottom`). Causes the toolbar to be at the top or bottom of the window.
     - __hidespinner__: Set to `yes` or `no` to change the visibility of the loading indicator (defaults to `no`).
 
+- __headers__: Headers for the http request. Optional. _(String)_ or _(javascript object)_
+    - _(String)_: headers must be in `header=value` form, separated by commas : `header1=value1,header2=value2`. don't use _(String)_ if commas or equals can be contained in headers or values.
+    - _(javascript object)_: headers are stored in object's properties like this `{ 'header1': 'value1', 'header2': 'value2'}`. this storage always works even if headers contain commas or equals.
 
 ### Supported Platforms
 
